@@ -1,23 +1,19 @@
 <template>
   <form class="contacto-form" @submit.prevent="validarFormulario">
-    <div class="form-grid">
-      <input class="form-input" v-model="nombre" placeholder="Nombre" />
-      <input class="form-input" v-model="correo" placeholder="Correo" />
-      <input class="form-input" v-model="telefono" placeholder="Teléfono" />
-      <textarea class="form-textarea" v-model="mensaje" placeholder="Mensaje"></textarea>
+    <div class="campo-grupo">
+      <input v-model="nombre" placeholder="Nombre" />
+      <input v-model="correo" placeholder="Correo" />
+      <input v-model="telefono" placeholder="Teléfono" />
+      <textarea v-model="mensaje" placeholder="Mensaje"></textarea>
     </div>
 
-    <label class="checkbox-wrap">
-      <input type="checkbox" v-model="newsletter" />
-      <span>Suscribirse al boletín</span>
-    </label>
-
-    <button class="submit-button" type="submit">Enviar</button>
+    <label class="checkbox-label"><input type="checkbox" v-model="newsletter" /> Suscribirse al boletín</label>
+    <button type="submit">Enviar</button>
   </form>
 
-  <div v-if="error" class="form-error">{{ error }}</div>
+  <div v-if="error" style="color:red">{{ error }}</div>
 
-  <div v-if="enviado" class="form-summary">
+  <div v-if="enviado">
     <h3>Datos enviados:</h3>
     <p><strong>Nombre:</strong> {{ nombre }}</p>
     <p><strong>Correo:</strong> {{ correo }}</p>
