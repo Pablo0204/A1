@@ -1,20 +1,12 @@
 <template>
   <div>
-    <HijoBoton @saludo="mostrarSaludo" />
-    <p v-if="mensaje">{{ mensaje }}</p>
+    <Tareas />
   </div>
 </template>
+
 <script>
-import HijoBoton from './HijoBoton.vue'
+import Tareas from './components/Tareas.vue';
 export default {
-  components: { HijoBoton },
-  data() {
-    return { mensaje: '' }
-  },
-  methods: {
-    mostrarSaludo() {
-      this.mensaje = 'Hola desde el hijo';
-    }
-  }
+  components: { Tareas }
 }
 </script>
