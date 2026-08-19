@@ -54,6 +54,82 @@ body {
   margin: 0;
 }
 
+.tareas-app {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 24px 16px;
+  box-sizing: border-box;
+  background: #eff6ff;
+}
+
+.tareas-panel {
+  width: min(100%, 520px);
+  padding: 28px;
+  box-sizing: border-box;
+  border: 1px solid #bfdbfe;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.tareas-panel h1 {
+  margin: 0 0 20px;
+  color: #1e3a8a;
+  font-size: 30px;
+  text-align: left;
+}
+
+.tareas-form {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.tareas-form input {
+  min-width: 0;
+  flex: 1;
+}
+
+.tareas-form button,
+.toggle-button {
+  white-space: nowrap;
+  background: #2563eb;
+}
+
+.tareas-form button:hover,
+.toggle-button:hover {
+  background: #1d4ed8;
+}
+
+.toggle-button {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.lista-tareas {
+  display: grid;
+  gap: 8px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.lista-tareas li {
+  padding: 12px 14px;
+  border-left: 4px solid #2563eb;
+  border-radius: 4px;
+  background: #eff6ff;
+  color: #1e3a8a;
+}
+
+.sin-tareas {
+  margin: 20px 0 0;
+  color: #64748b;
+  text-align: center;
+}
+
 form {
   width: min(100%, 420px);
   margin: 0 auto;

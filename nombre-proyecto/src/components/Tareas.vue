@@ -1,17 +1,27 @@
 <template>
-  <div>
-    <input v-model="nuevaTarea" placeholder="Escribe una nueva tarea" />
-    <button @click="agregarTarea">Agregar</button>
-    <button @click="mostrar = !mostrar">
-      {{ mostrar ? 'Ocultar' : 'Mostrar' }} tareas
-    </button>
+  <main class="tareas-app">
+    <section class="tareas-panel">
+      <h1>Mis tareas</h1>
+      <form class="tareas-form" @submit.prevent="agregarTarea">
+        <input
+          v-model="nuevaTarea"
+          placeholder="Escribe una nueva tarea"
+          aria-label="Nueva tarea"
+        />
+        <button type="submit">Agregar</button>
+      </form>
 
-    <ul v-show="mostrar">
-      <li v-for="(t, index) in tareas" :key="index">{{ t }}</li>
-    </ul>
+      <button class="toggle-button" type="button" @click="mostrar = !mostrar">
+        {{ mostrar ? 'Ocultar tareas' : 'Mostrar tareas' }}
+      </button>
 
-    <p v-if="tareas.length === 0">No hay tareas registradas</p>
-  </div>
+      <ul v-if="mostrar && tareas.length" class="lista-tareas">
+        <li v-for="(tarea, index) in tareas" :key="index">{{ tarea }}</li>
+      </ul>
+
+      <p v-else-if="!tareas.length" class="sin-tareas">No hay tareas registradas</p>
+    </section>
+  </main>
 </template>
 
 <script>
